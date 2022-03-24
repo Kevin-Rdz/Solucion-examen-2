@@ -2,6 +2,7 @@ package uaslp.objetos.parcial2.exam;
 
 import uaslp.objetos.parcial2.exam.exporters.ExporterFactory;
 import uaslp.objetos.parcial2.exam.exporters.ExporterType;
+import uaslp.objetos.parcial2.exam.messagebuilder.MessageBuilder;
 import uaslp.objetos.parcial2.exam.messagebuilder.MessageBuilderFactory;
 import uaslp.objetos.parcial2.exam.messagebuilder.MessageType;
 public class Main {
@@ -14,8 +15,9 @@ public class Main {
         StringBuilder message = new StringBuilder();
 
         for (MessageType messageType : messageTypes) {
-            String messageBuilder = MessageBuilderFactory.getMessageBuilder(messageType);
+            MessageBuilder messageBuilder = MessageBuilderFactory.getMessageBuilder(messageType);
 
+            message.append(messageBuilder.create());
             message.append(System.lineSeparator());
         }
 
