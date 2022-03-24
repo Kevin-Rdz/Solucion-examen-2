@@ -1,8 +1,9 @@
 package uaslp.objetos.parcial2.exam.exporters;
 
-public class HtmlExporter<T> implements ExporterFactory<T>{
+public abstract class HtmlExporter implements Exporter{
     @Override
-    public T export(T message) {
+    public String export(String message) {
         return "<html><body>HTML format</body></html>";
     }
+
 }

@@ -1,8 +1,8 @@
 package uaslp.objetos.parcial2.exam.exporters;
 
-public class XmlExporter<T> implements ExporterFactory<T>{
+public class XmlExporter implements Exporter{
     @Override
-    public T export(T message) {
+    public String export(String message) {
         return "<message>XML format</message>";
     }
 }

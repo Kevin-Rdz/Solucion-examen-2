@@ -6,5 +6,6 @@ public enum ExporterType {
 
     XML,
     JSON,
-    HTML
+    HTML;
+
 }

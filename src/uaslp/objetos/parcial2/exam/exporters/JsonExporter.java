@@ -1,8 +1,10 @@
 package uaslp.objetos.parcial2.exam.exporters;
 
-public class JsonExporter<T> implements ExporterFactory<T>{
+import java.lang.constant.Constable;
+
+public class JsonExporter implements Exporter{
     @Override
-    public T export(T message) {
+    public String export( String message) {
         return "{ \"message\":\"json format\"}";
     }
 }

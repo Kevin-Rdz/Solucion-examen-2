@@ -3,9 +3,7 @@ package uaslp.objetos.parcial2.exam;
 import uaslp.objetos.parcial2.exam.exporters.ExporterFactory;
 import uaslp.objetos.parcial2.exam.exporters.ExporterType;
 import uaslp.objetos.parcial2.exam.messagebuilder.MessageBuilderFactory;
-import uaslp.objetos.parcial2.exam.messagebuilder.MessageBuilder;
 import uaslp.objetos.parcial2.exam.messagebuilder.MessageType;
-
 public class Main {
 
     // NO MODIFICAR ESTE ARCHIVO
@@ -16,9 +14,8 @@ public class Main {
         StringBuilder message = new StringBuilder();
 
         for (MessageType messageType : messageTypes) {
-            MessageBuilder messageBuilder = MessageBuilderFactory.getMessageBuilder(messageType);
+            String messageBuilder = MessageBuilderFactory.getMessageBuilder(messageType);
 
-            message.append(messageBuilder.create());
             message.append(System.lineSeparator());
         }
 
@@ -29,7 +26,8 @@ public class Main {
         MessageType: Modify reservation
         MessageType: Check in reservation
         MessageType: Check out reservation
-*/
+
+ */
         System.out.println(ExporterFactory.getExporter(ExporterType.JSON).export(message.toString()));
         //Se espera la salida { "message":"json format"} tras llamar a JsonExporter
         System.out.println(ExporterFactory.getExporter(ExporterType.XML).export(message.toString()));
